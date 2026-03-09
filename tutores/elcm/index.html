@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang='pt-pt'>
+<head>
+<meta charset='UTF-8'>
+<title>Cartões</title>
+<style>
+  body { font-family: Arial, sans-serif; background: none; padding: 20px; }
+  .grupo { margin-bottom: 40px; }
+  .cartoes { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; }
+  .card {
+    position: relative;
+    width: 300px;
+    height: 440px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+  }
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  .card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+  .name {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    z-index: 2;
+  }
+
+  .title {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    transition: bottom 0.4s ease-in-out;
+    z-index: 2;
+  }
+  .card:hover .title { bottom: 120px; }
+  .hover-info {
+    position: absolute;
+    bottom: -120px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 16px;
+    font-size: 14px;
+    color: #333;
+    transition: bottom 0.4s ease-in-out;
+    z-index: 3;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    max-height: 120px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+  .hover-info p {
+    text-align: justify;
+  }
+  .espelhado {
+    transform: scaleX(-1);
+  }
+  .card.ativo img {
+    filter: grayscale(0%) !important;
+    transform: scale(1.05) !important;
+  }
+  .grupo h2::before {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #ccc;
+    margin-bottom: 16px;
+    border-radius: 2px;
+  }
+  .card:hover .hover-info { bottom: 0; }
+</style>
+</head>
+<body>
+<div class='grupo'>
+<div class='grupo'><h2>e-Tutor(es)</h2><div class='cartoes'>
+  <div class='cartoes'>
+    <div class='card'>
+      <img src='imagens/brunoc.jpg' alt='Foto de Bruno Campos'>
+      <div class='name'></div>
+      <div class='title'><strong>e-Tutor - Bruno Campos</strong></div>
+      <div class='hover-info'><p>Engenheiro Eletrotécnico, tendo realizado todo o seu percurso formativo na área da eletricidade e eletrónica.Informação complementar:
+
+- Curso de Formação Profissional de PV*SOL - Projeto de Energia Solar (Ordem dos Engenheiros).
+
+- Curso de Especialização Tecnológica em Automação e Energia.
+
+- Curso Técnico de Eletrónica, Áudio, Vídeo e TV.
+
+- Membro da Ordem dos Engenheiros.
+
+- Técnico responsável de instalações elétricas nos domínios de Projeto (BT), Execução (BT) e Exploração (BT) reconhecido pela DGEG.
+
+- A frequentar uma pós-graduação em projeto e manutenção de instalações elétricas.</p></div>
+    </div>
+    <div class='card'>
+      <img src='imagens/sarar.jpg' alt='Foto de Sara Ruivo'>
+      <div class='name'></div>
+      <div class='title'><strong>e-Tutor -  Sara Ruivo</strong></div>
+      <div class='hover-info'><p>....</p></div>
+  </div>
+<div class='card'>
+      <img src='imagens/pedrob.jpg' alt='Foto de Pedro Bernardino'>
+      <div class='name'></div>
+      <div class='title'><strong>e-Tutor -  Pedro Bernardino</strong></div>
+      <div class='hover-info'><p>Formado na área de Gestão de Equipamentos Informáticos.
+
+Tem desenvolvido o seu percurso profissional na área da consultoria, implementação e manutenção de redes e parques informáticos.
+
+Possui igualmente experiência profissional na área do suporte remoto e presencial e na implementação de políticas de segurança.</p></div>
+  </div>
+<div class='card'>
+      <img src='imagens/franciscol.jpg' alt='Foto de Francisco Lima'>
+      <div class='name'></div>
+      <div class='title'><strong>e-Tutor -  Francisco Lima</strong></div>
+      <div class='hover-info'><p>Docente com formação pedagógica e curso avançado de informática. Experiência no ensino e acompanhamento de formandos na área das tecnologias de informação, promovendo a aprendizagem de competências informáticas essenciais em contexto académico e profissional.</p></div>
+  </div>
+</div>
+</div>
+<div class='grupo'>
+  <h1 class="fixo">Preparadores</h1>
+
+  <div class='grupo'>
+    <h2>Centro Formativo de Lisboa</h2>
+    <div class='cartoes'>
+      <div class='card'>
+        <img src='imagens/brunoh.jpg' alt='Foto de Bruno Henriques'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Bruno Henriques</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Lisboa.</p></div>
+      </div>
+      <div class='card'>
+        <img src='imagens/victor.png' alt='Foto de Victor Carvalho'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Victor Carvalho</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Lisboa.</p></div>
+      </div>
+<div class='card'>
+        <img src='imagens/monica.png' alt='Foto de Mónica Belchior'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparadora - Mónica Belchior</strong></div>
+        <div class='hover-info'><p>Preparadora Técnica do Centro Formativo de Lisboa.</p></div>
+      </div>
+<div class='card'>
+        <img src='imagens/pauloc.jpg' alt='Foto de Paulo Carvalho'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Paulo Carvalho</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Lisboa.</p></div>
+      </div>
+<div class='card'>
+        <img src='imagens/tiagoc.jpg' alt='Foto de Tiago Costa'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Tiago Costa</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Lisboa.</p></div>
+      </div>
+<div class='card'>
+        <img src='imagens/ismael.jpg' alt='Foto de Ismael Amaro'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Ismael Amaro</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Lisboa.</p></div>
+      </div>
+      </div>
+<div class='grupo'>
+    <h2>Centro Formativo do Porto</h2>
+    <div class='cartoes'>
+      <div class='card'>
+        <img src='imagens/matheus.jpg' alt='Foto de Matheus Mello'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Matheus Mello</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo do Porto.</p></div>
+      </div>
+ <div class='card'>
+        <img src='imagens/andrecorreia.png' alt='Foto de André Ricardo'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - André Ricardo</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo do Porto.</p></div>
+      </div>
+ <div class='card'>
+        <img src='imagens/miguelc.jpg' alt='Foto de Miguel Cunha'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Miguel Cunha</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo do Porto.</p></div>
+      </div>
+           </div>
+<div class='grupo'>
+    <h2>Centro Formativo de Braga</h2>
+    <div class='cartoes'>
+      <div class='card'>
+        <img src='imagens/pedro.jpg' alt='Foto de Pedro Ferreira'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Pedro Ferreira</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Braga.</p></div>
+      </div>
+<div class='card'>
+        <img src='imagens/leonardoo.jpg' alt='Foto de Leonardo Costa'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Leonardo Costa</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Braga.</p></div>
+      </div>
+
+      </div>
+    </div>
+
+  <div class='grupo'>
+    <h2>Centro Formativo de Coimbra</h2>
+    <div class='cartoes'>
+      <div class='card'>
+        <img src='imagens/cipriano.png' alt='Foto de Paulo Cipriano'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Paulo Cipriano</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Coimbra.</p></div>
+      </div>
+ <div class='card'>
+        <img src='imagens/branco.png' alt='Foto de Jorge Branco'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Jorge Branco</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Coimbra.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='grupo'>
+    <h2>Centro Formativo de Faro</h2>
+    <div class='cartoes'>
+      <div class='card'>
+        <img src='imagens/frederic.png' alt='Foto de Frederic Fernandes'>
+        <div class='name'></div>
+        <div class='title'><strong>Preparador - Frederic Fernandes</strong></div>
+        <div class='hover-info'><p>Preparador Técnico do Centro Formativo de Faro.</p></div>
+      </div>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".card").forEach(card => {
+      let jaAtivado = false;
+      card.addEventListener("mouseenter", () => {
+        if (!jaAtivado) {
+          card.classList.add("ativo");
+          jaAtivado = true;
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

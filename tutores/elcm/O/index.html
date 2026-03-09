@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang='pt-pt'>
+<head>
+
+<meta charset='UTF-8'>
+<title>Cartões</title>
+<style>
+
+#btn-topo {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s, color 0.3s;
+  z-index: 999;
+}
+#btn-topo.visivel {
+  opacity: 1;
+}
+#btn-topo:hover {
+  background-color: black;
+  color: white;
+}
+  body { font-family: Arial, sans-serif; background: none; padding: 20px; }
+  .grupo { margin-bottom: 40px; }
+  .cartoes { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; }
+  .card {
+    position: relative;
+    width: 300px;
+    height: 440px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+  }
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  .card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+  .name {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    z-index: 2;
+  }
+  .title {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    transition: bottom 0.4s ease-in-out;
+    z-index: 2;
+  }
+  .card:hover .title { bottom: 120px; }
+  .hover-info {
+    position: absolute;
+    bottom: -120px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 16px;
+    font-size: 14px;
+    color: #333;
+    transition: bottom 0.4s ease-in-out;
+    z-index: 3;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    max-height: 100px; /* ou outro valor ajustado ao teu layout */
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+ .hover-info {
+  max-height: 120px; /* ou o valor que preferires */
+  overflow-y: auto;
+}
+ .hover-info p {
+  text-align: justify;
+}
+.espelhado {
+  transform: scaleX(-1);
+}
+.card.ativo img {
+  filter: grayscale(0%) !important;
+  transform: scale(1.05) !important;
+}
+.grupo h2::before {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #ccc;
+  margin-bottom: 16px;
+  border-radius: 2px;
+}
+.fixo {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+  .card:hover .hover-info { bottom: 0; }
+</style>
+</head>
+<body>
+<div class='grupo'><h2>e-Tutor(es)</h2><div class='cartoes'>
+  <div class='cartoes'>
+    <div class='card'>
+      <img src='imagens/hugo.jpg' alt='Foto de Hugo Mestre'>
+      <div class='name'></div>
+      <div class='title'><strong>e-Tutor - Hugo Mestre</strong></div>
+      <div class='hover-info'><p>Licenciado em Arte e Multimédia, na Faculdade de Belas-Artes Universidade de Lisboa. Teve a oportunidade de ilustrar o livro "Tuika Salta-Pulos o antigo Egito". Colaborou com o estúdio NerdMonkeys.</p></div>
+    </div>
+    <div class='card'>
+      <img src='imagens/pedro.jpeg' alt='Foto de Pedro Barreiro'>
+      <div class='name'></div>
+      <div class='title'><strong>e-Tutor -  Pedro Barreiro</strong></div>
+      <div class='hover-info'><p>Licenciado em Engenharia de Desenvolvimento de jogos digitais. Trabalha há mais de 5 anos em desenvolvimento de videojogos, utilizando o Unity em várias áreas.</p></div>
+</div>
+</div></div>
+<div class='grupo'><h2>Orientadoras</h2><div class='cartoes'>
+<div class='card'>
+<img src='imagens/bianca.png' alt=''>
+<div class='name'></div>
+<div class='title'><strong>Orientadora - Bianca Pinho</strong></div>
+<div class='hover-info'><p>Licenciatura em Educação e Formação pelo IEUL (Instituto de Educação da Universidade de Lisboa).</p></div>
+</div>
+<div class='card'>
+<img src='imagens/laura.png' alt=''>
+<div class='name'></div>
+<div class='title'><strong>Orientadora - Laura Monteiro</strong></div>
+<div class='hover-info'><p>Licenciatura em Educação e Formação pelo IEUL (Instituto de Educação da Universidade de Lisboa).</p></div>
+</div>
+<div class='card'>
+<img src='imagens/patricia.png' alt=''>
+<div class='name'></div>
+<div class='title'><strong>Orientadora - Patrícia Jarreta</strong></div>
+<div class='hover-info'><p>Mestrado em Educação e Formação na especialidade de Organização e Gestão da Educação e da Formação - Instituto de Educação da Universidade de Lisboa.</p></div>
+</div>
+<div class='card'>
+<img src='imagens/renata.png' alt=''>
+<div class='name'></div>
+<div class='title'><strong>Orientadora - Renata Marchão</strong></div>
+<div class='hover-info'><p>Licenciatura em Estudos Portugueses pela Faculdade de Ciências Sociais e Humanas da Universidade Nova de Lisboa.</p></div>
+</div>
+<div class='card'>
+<img src='imagens/rita.png' alt=''>
+<div class='name'></div>
+<div class='title'><strong>Orientadora - Rita Dias</strong></div>
+<div class='hover-info'><p>Mestrado em Educação e Formação com Especialização em Desenvolvimento Social e Cultural pelo IEUL (Instituto de Educação da Universidade de Lisboa). </p></div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".hover-info p").forEach(p => {
+      const linhas = p.innerText.split('
+').length;
+      if (linhas <= 1) {
+        p.classList.add("bio-uma-linha");
+      } else {
+        p.classList.add("bio-varias-linhas");
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".card").forEach(card => {
+      let jaAtivado = false;
+      card.addEventListener("mouseenter", () => {
+        if (!jaAtivado) {
+          card.classList.add("ativo");
+          jaAtivado = true;
+        }
+      });
+    });
+  });
+
+</script>
+<button id="btn-topo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+  ↑ Topo</button>
+<script>
+  window.addEventListener("scroll", () => {
+    const botao = document.getElementById("btn-topo");
+    const fimDaPagina = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+    botao.classList.toggle("visivel", fimDaPagina);
+  });
+</script>
+</body></html>
